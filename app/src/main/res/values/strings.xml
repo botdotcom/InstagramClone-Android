@@ -2,7 +2,11 @@
     <string name="app_name">Instagram</string>
     <string name="signin">Sign In</string>
     <string name="signup">Sign Up</string>
+    <string name="signout">Sign Out</string>
     <string name="username_hint">Username</string>
     <string name="password_hint">Password</string>
     <string name="signup_instead">New user? Sign up instead!</string>
+    <string name="take_picture">Take Picture</string>
+    <string name="caption_hint">Enter Caption</string>
+    <string name="submit_post">Submit</string>
 </resources>

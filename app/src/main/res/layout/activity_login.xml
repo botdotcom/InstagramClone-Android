@@ -1,20 +1,20 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout
+<LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".LoginActivity">
+    tools:context=".LoginActivity"
 
-    <RelativeLayout
-        android:id="@+id/enclosing_relative_layout"
-        android:layout_width="280dp"
+        android:id="@+id/login_enclosing_linear_layout"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_centerInParent="true">
+        android:orientation="vertical"
+        android:layout_margin="16dp"
+        android:layout_gravity="center"
+        >
 
         <ImageView
-            android:id="@+id/instagram_cursive"
+            android:id="@+id/instagram_cursive_login"
             android:layout_width="wrap_content"
             android:layout_height="45dp"
             app:tint="@color/colorAccent"
@@ -24,7 +24,6 @@
             android:id="@+id/username_edittext_view"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_below="@id/instagram_cursive"
             android:gravity="center_horizontal"
             android:hint="@string/username_hint"
             android:backgroundTint="@color/colorPrimaryDark"
@@ -34,7 +33,6 @@
             android:id="@+id/password_edittext_view"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_below="@id/username_edittext_view"
             android:gravity="center_horizontal"
             android:hint="@string/password_hint"
             android:backgroundTint="@color/colorPrimaryDark"
@@ -44,7 +42,7 @@
             android:id="@+id/signin_button"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_below="@id/password_edittext_view"
+            android:layout_weight="1"
             android:text="@string/signin"
             android:backgroundTint="@color/colorPrimaryDark"
             android:textColor="@color/white"
@@ -54,7 +52,6 @@
             android:id="@+id/signup_instead_text_view"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_below="@id/signin_button"
             android:layout_marginTop="50dp"
             android:gravity="center_horizontal"
             android:text="@string/signup_instead" />
@@ -63,12 +60,10 @@
             android:id="@+id/signup_button"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_below="@id/signup_instead_text_view"
+            android:layout_weight="1"
             android:text="@string/signup"
-            android:backgroundTint="@color/colorPrimaryDark"
+            android:backgroundTint="@color/link_blue"
             android:textColor="@color/white"
             android:textAllCaps="false" />
 
-    </RelativeLayout>
-
-</RelativeLayout>
+</LinearLayout>

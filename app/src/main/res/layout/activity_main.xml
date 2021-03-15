@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".MainActivity"
+
+    android:id="@+id/main_enclosing_relative_layout"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="16dp"
+    android:orientation="vertical"
+    >
+
+    <Button
+        android:id="@+id/take_picture_button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/take_picture"
+        android:backgroundTint="@color/colorPrimaryDark"
+        android:textColor="@color/white"
+        android:textAllCaps="false" />
+
+    <ImageView
+        android:id="@+id/uploaded_picture_image_view"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:layout_marginTop="10dp"
+        android:layout_below="@id/take_picture_button" />
+
+    <EditText
+        android:id="@+id/caption_edittext_view"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/uploaded_picture_image_view"
+        android:layout_marginTop="30dp"
+        android:gravity="center_horizontal"
+        android:hint="@string/caption_hint"
+        android:backgroundTint="@color/colorPrimaryDark"
+        android:inputType="text" />
+
+    <Button
+        android:id="@+id/submit_post_button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/caption_edittext_view"
+        android:layout_marginTop="20dp"
+        android:text="@string/submit_post"
+        android:backgroundTint="@color/colorPrimaryDark"
+        android:textColor="@color/white"
+        android:textAllCaps="false" />
+
+    <Button
+        android:id="@+id/signout_button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/submit_post_button"
+        android:layout_marginTop="50dp"
+        android:text="@string/signout"
+        android:backgroundTint="@color/grey"
+        android:textColor="@color/white"
+        android:textAllCaps="false" />
+
+</RelativeLayout>
