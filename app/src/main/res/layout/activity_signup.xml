@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".SignupActivity"
+
+    android:id="@+id/signup_enclosing_linear_layout"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:layout_margin="16dp"
+    android:layout_gravity="center"
+    >
+
+    <ImageView
+        android:id="@+id/instagram_cursive_signup"
+        android:layout_width="wrap_content"
+        android:layout_height="45dp"
+        app:tint="@color/colorAccent"
+        android:src="@drawable/ic_instagram_wordmark" />
+
+    <EditText
+        android:id="@+id/new_username_edittext_view"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal"
+        android:hint="@string/username_hint"
+        android:backgroundTint="@color/colorPrimaryDark"
+        android:inputType="text" />
+
+    <EditText
+        android:id="@+id/new_password_edittext_view"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal"
+        android:hint="@string/password_hint"
+        android:backgroundTint="@color/colorPrimaryDark"
+        android:inputType="textPassword" />
+
+    <EditText
+        android:id="@+id/confirm_password_edittext_view"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal"
+        android:hint="@string/confirm_password_hint"
+        android:backgroundTint="@color/colorPrimaryDark"
+        android:inputType="textPassword" />
+
+    <Button
+        android:id="@+id/signup_instagram_button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:text="@string/signup"
+        android:backgroundTint="@color/colorPrimaryDark"
+        android:textColor="@color/white"
+        android:textAllCaps="false" />
+
+</LinearLayout>

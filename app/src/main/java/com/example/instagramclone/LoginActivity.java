@@ -18,7 +18,7 @@ public class LoginActivity extends AppCompatActivity {
     public static final String ACTIVITY_TAG = "LoginActivity";
 
     private EditText usernameEditText, passwordEditText;
-    private Button signinButton;
+    private Button signinButton, signupButton;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -32,14 +32,23 @@ public class LoginActivity extends AppCompatActivity {
         usernameEditText = findViewById(R.id.username_edittext_view);
         passwordEditText = findViewById(R.id.password_edittext_view);
         signinButton = findViewById(R.id.signin_button);
+        signupButton = findViewById(R.id.signup_button);
 
         signinButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Log.i(ACTIVITY_TAG, "onClick: Login Button");
+                Log.i(ACTIVITY_TAG, "onClick: Sign in Button");
                 String username = usernameEditText.getText().toString();
                 String password = passwordEditText.getText().toString();
                 signinUser(username, password);
+            }
+        });
+
+        signupButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Log.i(ACTIVITY_TAG, "onClick: Sign up Button");
+                gotoSignupActivity();
             }
         });
     }
@@ -68,5 +77,10 @@ public class LoginActivity extends AppCompatActivity {
         Intent intent = new Intent(this, MainActivity.class);
         startActivity(intent);
         finish();
+    }
+
+    private void gotoSignupActivity() {
+        Intent intent = new Intent(this, SignupActivity.class);
+        startActivity(intent);
     }
 }
