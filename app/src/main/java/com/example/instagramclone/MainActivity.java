@@ -16,8 +16,10 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.ProgressBar;
 import android.widget.Toast;
 
+import com.example.instagramclone.models.Post;
 import com.parse.FindCallback;
 import com.parse.ParseException;
 import com.parse.ParseFile;
@@ -38,6 +40,7 @@ public class MainActivity extends AppCompatActivity {
     private Button submitPostButton;
     private EditText captionEditText;
     private ImageView uploadedPictureImageView;
+    private ProgressBar postUploadingBar;
 
     private Button signoutButton;
 
@@ -50,7 +53,8 @@ public class MainActivity extends AppCompatActivity {
         uploadedPictureImageView = findViewById(R.id.uploaded_picture_image_view);
         captionEditText = findViewById(R.id.caption_edittext_view);
         submitPostButton = findViewById(R.id.submit_post_button);
-        signoutButton = findViewById(R.id.signout_button);
+        signoutButton = findViewById(R.id.signout_appbar_button);
+        postUploadingBar = findViewById(R.id.posting_loading_bar);
 
         captureImageButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -153,9 +157,13 @@ public class MainActivity extends AppCompatActivity {
                     Toast.makeText(MainActivity.this, "Error saving the post", Toast.LENGTH_SHORT).show();
                 }
 
+                postUploadingBar.setVisibility(ProgressBar.VISIBLE);
+//                postUploadingBar.setIndeterminate(true);
                 Log.i(ACTIVITY_TAG, "Posted successfully");
                 captionEditText.setText("");
                 uploadedPictureImageView.setImageResource(0);
+                postUploadingBar.setVisibility(ProgressBar.INVISIBLE);
+//                postUploadingBar.setIndeterminate(false);
             }
         });
     }

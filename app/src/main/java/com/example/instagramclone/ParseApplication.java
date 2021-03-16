@@ -1,5 +1,6 @@
 package com.example.instagramclone;
 
+import com.example.instagramclone.models.Post;
 import com.parse.Parse;
 import com.parse.ParseObject;
 
