@@ -1,5 +1,6 @@
 package com.example.instagramclone;
 
+import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.content.FileProvider;
@@ -12,6 +13,7 @@ import android.os.Bundle;
 import android.os.Environment;
 import android.provider.MediaStore;
 import android.util.Log;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -20,6 +22,7 @@ import android.widget.ProgressBar;
 import android.widget.Toast;
 
 import com.example.instagramclone.models.Post;
+import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.parse.FindCallback;
 import com.parse.ParseException;
 import com.parse.ParseFile;
@@ -43,6 +46,7 @@ public class MainActivity extends AppCompatActivity {
     private ProgressBar postUploadingBar;
 
     private Button signoutButton;
+    private BottomNavigationView bottomNavigationView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -55,6 +59,52 @@ public class MainActivity extends AppCompatActivity {
         submitPostButton = findViewById(R.id.submit_post_button);
         signoutButton = findViewById(R.id.signout_appbar_button);
         postUploadingBar = findViewById(R.id.posting_loading_bar);
+
+        bottomNavigationView = findViewById(R.id.bottom_navigation);
+//        bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
+//            @Override
+//            public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+//                switch (item.getItemId()) {
+//                    case R.id.action_home_feed:
+//                        item.setIcon(R.drawable.ic_instagram_home_filled);
+//                        return true;
+//                    case R.id.action_search:
+//                        return true;
+//                    case R.id.action_create:
+//                        item.setIcon(R.drawable.ic_instagram_new_post_filled);
+//                        return true;
+//                    case R.id.action_favorites:
+//                        item.setIcon(R.drawable.ic_instagram_heart_filled);
+//                        return true;
+//                    case R.id.action_profile:
+//                        item.setIcon(R.drawable.ic_instagram_user_filled);
+//                        return true;
+//                    default: return true;
+//                }
+//            }
+//        });
+//        bottomNavigationView.setOnNavigationItemReselectedListener(new BottomNavigationView.OnNavigationItemReselectedListener() {
+//            @Override
+//            public void onNavigationItemReselected(@NonNull MenuItem item) {
+//                switch (item.getItemId()) {
+//                    case R.id.action_home_feed:
+//                        item.setIcon(R.drawable.ic_instagram_home_stroke);
+//                        break;
+//                    case R.id.action_search:
+//                        break;
+//                    case R.id.action_create:
+//                        item.setIcon(R.drawable.ic_instagram_new_post_stroke);
+//                        break;
+//                    case R.id.action_favorites:
+//                        item.setIcon(R.drawable.ic_instagram_heart_stroke);
+//                        break;
+//                    case R.id.action_profile:
+//                        item.setIcon(R.drawable.ic_instagram_user_stroke);
+//                        break;
+//                    default: break;
+//                }
+//            }
+//        });
 
         captureImageButton.setOnClickListener(new View.OnClickListener() {
             @Override

@@ -10,4 +10,9 @@
     <string name="take_picture">Take Picture</string>
     <string name="caption_hint">Enter Caption</string>
     <string name="submit_post">Submit</string>
+    <string name="text_home">Home</string>
+    <string name="text_search">Search</string>
+    <string name="text_create">Create</string>
+    <string name="text_favorite">Favorites</string>
+    <string name="text_profile">Profile</string>
 </resources>
