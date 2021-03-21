@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/new_post_relative_layout"
+    tools:context=".fragments.ComposeFragment">
+
+    <ProgressBar
+        android:id="@+id/posting_loading_bar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:indeterminate="true"
+        android:visibility="invisible" />
+
+    <Button
+        android:id="@+id/take_picture_button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:backgroundTint="@color/colorPrimaryDark"
+        android:text="@string/take_picture"
+        android:textAllCaps="false"
+        android:textColor="@color/white" />
+
+    <ImageView
+        android:id="@+id/uploaded_picture_image_view"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:layout_below="@id/take_picture_button"
+        android:layout_marginTop="10dp" />
+
+    <EditText
+        android:id="@+id/caption_edittext_view"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/uploaded_picture_image_view"
+        android:layout_marginTop="30dp"
+        android:backgroundTint="@color/colorPrimaryDark"
+        android:gravity="center_horizontal"
+        android:hint="@string/caption_hint"
+        android:inputType="text" />
+
+    <Button
+        android:id="@+id/submit_post_button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/caption_edittext_view"
+        android:layout_marginTop="20dp"
+        android:backgroundTint="@color/colorPrimaryDark"
+        android:text="@string/submit_post"
+        android:textAllCaps="false"
+        android:textColor="@color/white" />
+
+</RelativeLayout>

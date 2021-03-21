@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/post_linear_layout"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="5dp">
+
+    <TextView
+        android:id="@+id/username_text_view"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
+        android:textAppearance="@style/TextAppearance.AppCompat.Large"
+        android:textSize="20sp"
+        tools:text="shamli_singh" />
+
+    <ImageView
+        android:id="@+id/post_image_view"
+        android:layout_width="match_parent"
+        android:layout_height="300dp"
+        android:layout_marginBottom="8dp"
+        android:scaleType="centerCrop"
+        tools:srcCompat="@tools:sample/avatars[3]" />
+
+    <TextView
+        android:id="@+id/caption_text_view"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
+        android:textSize="18sp"
+        tools:text="cutie kitty!" />
+
+</LinearLayout>
