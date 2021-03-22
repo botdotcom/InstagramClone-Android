@@ -13,9 +13,8 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.RelativeLayout;
 
-import com.example.instagramclone.PostsAdapter;
+import com.example.instagramclone.HomeFeedAdapter;
 import com.example.instagramclone.R;
 import com.example.instagramclone.models.Post;
 import com.parse.FindCallback;
@@ -31,7 +30,7 @@ public class HomeFragment extends Fragment {
     private RecyclerView homeFeedRecyclerView;
     private SwipeRefreshLayout swipeRefreshLayout;
 
-    protected PostsAdapter postsAdapter;
+    protected HomeFeedAdapter homeFeedAdapter;
     protected List<Post> allPosts;
 
     public HomeFragment() {
@@ -55,7 +54,7 @@ public class HomeFragment extends Fragment {
 
         // create data source
         allPosts = new ArrayList<>();
-        postsAdapter = new PostsAdapter(getContext(), allPosts);
+        homeFeedAdapter = new HomeFeedAdapter(getContext(), allPosts);
 
         swipeRefreshLayout.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
             @Override
@@ -66,7 +65,7 @@ public class HomeFragment extends Fragment {
         });
 
         // set adapter on the recycler view
-        homeFeedRecyclerView.setAdapter(postsAdapter);
+        homeFeedRecyclerView.setAdapter(homeFeedAdapter);
         // set layout manager on the recycler view
         homeFeedRecyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
         queryPosts();
@@ -90,7 +89,7 @@ public class HomeFragment extends Fragment {
                 }
 
                 allPosts.addAll(posts);
-                postsAdapter.notifyDataSetChanged();
+                homeFeedAdapter.notifyDataSetChanged();
             }
         });
 

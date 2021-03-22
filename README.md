@@ -2,7 +2,7 @@
 
 **Instagram Clone** is a photo sharing app similar to Instagram but using Parse as its backend.
 
-Time spent: **7** hours spent in total
+Time spent: **9** hours spent in total
 
 ## User Stories
 
@@ -23,17 +23,17 @@ The following **optional** features are implemented:
 1.
 - [x] User sees app icon in home screen and styled bottom navigation view
 - [ ] Style the feed to look like the real Instagram feed
-- [x] After the user submits a new post, show an indeterminate progress bar while the post is being uploaded to Parse
+- [ ] After the user submits a new post, show an indeterminate progress bar while the post is being uploaded to Parse
 2.
-- [ ] User can load more posts once he or she reaches the bottom of the feed using infinite scrolling.
-- [ ] Show the username and creation time for each post.
-- [ ] User can tap a post to view post details, including timestamp and caption.
+- [ ] User can load more posts once he or she reaches the bottom of the feed using infinite scrolling
+- [ ] Show the username and creation time for each post
+- [ ] User can tap a post to view post details, including timestamp and caption
 - [ ] User Profiles
       - [ ] Allow the logged in user to add a profile photo
       - [ ] Display the profile photo with each post
       - [ ] Tapping on a post's username or profile photo goes to that user's profile page and shows a grid view of the user's posts 
-- [ ] User can comment on a post and see all comments for each post in the post details screen.
-- [ ] User can like a post and see number of likes for each post in the post details screen.
+- [ ] User can comment on a post and see all comments for each post in the post details screen
+- [ ] User can like a post and see number of likes for each post in the post details screen
 
 ## Video Walkthrough
 
@@ -56,7 +56,7 @@ Describe any challenges encountered while building the app.
 
 ## License
 
-    Copyright [yyyy] [name of copyright owner]
+    Copyright [2021] [Shamli Singh]
 
     Licensed under the Apache License, Version 2.0 (the "License");
     you may not use this file except in compliance with the License.

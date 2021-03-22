@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/post_linear_layout"
     android:orientation="vertical"
@@ -7,14 +8,37 @@
     android:layout_height="wrap_content"
     android:layout_margin="5dp">
 
-    <TextView
-        android:id="@+id/username_text_view"
+    <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:id="@+id/post_user_relative_layout"
         android:layout_marginBottom="8dp"
-        android:textAppearance="@style/TextAppearance.AppCompat.Large"
-        android:textSize="20sp"
-        tools:text="shamli_singh" />
+        >
+
+<!--        <ImageView-->
+<!--            android:id="@+id/user_profile_image_view"-->
+<!--            android:layout_width="30dp"-->
+<!--            android:layout_height="30dp"-->
+<!--            tools:srcCompat="@tools:sample/avatars[0]" />-->
+
+        <TextView
+            android:id="@+id/username_text_view"
+            android:layout_width="wrap_content"
+            android:layout_height="30dp"
+            android:gravity="center"
+            android:textAppearance="@style/TextAppearance.AppCompat.Large"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            tools:text="shamli_singh" />
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="30dp"
+            android:layout_marginStart="380dp"
+            android:src="@drawable/ic_instagram_media_options"
+            app:tint="@color/white" />
+
+    </RelativeLayout>
 
     <ImageView
         android:id="@+id/post_image_view"
@@ -24,12 +48,94 @@
         android:scaleType="centerCrop"
         tools:srcCompat="@tools:sample/avatars[3]" />
 
-    <TextView
-        android:id="@+id/caption_text_view"
+    <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="25dp"
+        android:id="@+id/post_actions_relative_layout"
         android:layout_marginBottom="8dp"
-        android:textSize="18sp"
-        tools:text="cutie kitty!" />
+        >
+
+        <ImageView
+            android:id="@+id/like_post_icon_button"
+            android:layout_width="25dp"
+            android:layout_height="match_parent"
+            android:src="@drawable/ic_instagram_heart_stroke"
+            app:tint="@color/white" />
+
+        <ImageView
+            android:id="@+id/comment_post_icon_button"
+            android:layout_width="25dp"
+            android:layout_height="match_parent"
+            android:layout_marginStart="15dp"
+            android:layout_toEndOf="@id/like_post_icon_button"
+            android:src="@drawable/ic_instagram_comment_stroke"
+            app:tint="@color/white" />
+
+        <ImageView
+            android:id="@+id/send_post_icon_button"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_marginStart="15dp"
+            android:layout_toEndOf="@id/comment_post_icon_button"
+            android:scaleType="centerCrop"
+            android:src="@drawable/ic_instagram_send_direct"
+            app:tint="@color/white" />
+
+        <ImageView
+            android:id="@+id/bookmark_post_icon_button"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_marginStart="275dp"
+            android:layout_toEndOf="@id/send_post_icon_button"
+            android:scaleType="centerCrop"
+            android:src="@drawable/ic_instagram_bookmark_stroke"
+            app:tint="@color/white" />
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/post_caption_relative_layout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="5dp"
+        >
+
+        <TextView
+            android:id="@+id/likes_count_text_view"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="5dp"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            tools:text="12 likes" />
+
+        <TextView
+            android:id="@+id/caption_username_text_view"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/likes_count_text_view"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            tools:text="shamli_singh" />
+
+        <TextView
+            android:id="@+id/caption_text_view"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/likes_count_text_view"
+            android:layout_toEndOf="@id/caption_username_text_view"
+            android:layout_marginStart="5dp"
+            android:textSize="18sp"
+            tools:text="cutie kitty!" />
+
+        <TextView
+            android:id="@+id/created_ago_text_view"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/caption_text_view"
+            android:textSize="12sp"
+            tools:text="Just now" />
+
+    </RelativeLayout>
 
 </LinearLayout>

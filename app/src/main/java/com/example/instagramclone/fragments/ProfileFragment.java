@@ -32,7 +32,7 @@ public class ProfileFragment extends HomeFragment {
                 }
 
                 allPosts.addAll(posts);
-                postsAdapter.notifyDataSetChanged();
+                homeFeedAdapter.notifyDataSetChanged();
             }
         });
     }

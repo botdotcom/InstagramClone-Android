@@ -13,14 +13,15 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.bumptech.glide.Glide;
 import com.example.instagramclone.models.Post;
 import com.parse.ParseFile;
+import com.parse.ParseQuery;
 
 import java.util.List;
 
-public class PostsAdapter extends RecyclerView.Adapter<PostsAdapter.ViewHolder> {
+public class HomeFeedAdapter extends RecyclerView.Adapter<HomeFeedAdapter.ViewHolder> {
     private Context context;
     private List<Post> posts;
 
-    public PostsAdapter(Context context, List<Post> posts) {
+    public HomeFeedAdapter(Context context, List<Post> posts) {
         this.context = context;
         this.posts = posts;
     }
@@ -57,6 +58,8 @@ public class PostsAdapter extends RecyclerView.Adapter<PostsAdapter.ViewHolder> 
         private TextView usernameTextView;
         private ImageView postImageView;
         private TextView captionTextView;
+        private TextView captionUsernameTextView;
+//        private ImageView userImageView;
 
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
@@ -64,13 +67,20 @@ public class PostsAdapter extends RecyclerView.Adapter<PostsAdapter.ViewHolder> 
             usernameTextView = itemView.findViewById(R.id.username_text_view);
             postImageView = itemView.findViewById(R.id.post_image_view);
             captionTextView = itemView.findViewById(R.id.caption_text_view);
+            captionUsernameTextView = itemView.findViewById(R.id.caption_username_text_view);
+//            userImageView = itemView.findViewById(R.id.user_profile_image_view);
         }
 
         public void bind(Post post) {
             usernameTextView.setText(post.getUser().getUsername());
-            captionTextView.setText(post.getCaption());
+
+            if (!post.getCaption().isEmpty()) {
+                captionTextView.setText(post.getCaption());
+                captionUsernameTextView.setText(post.getUser().getUsername());
+            }
 
             ParseFile image = post.getImage();
+//            ParseFile userImage =
 
             if (image != null) {
                 Glide.with(context).load(post.getImage().getUrl()).into(postImageView);
