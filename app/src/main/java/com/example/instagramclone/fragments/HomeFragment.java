@@ -13,6 +13,7 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Toast;
 
 import com.example.instagramclone.HomeFeedAdapter;
 import com.example.instagramclone.R;
@@ -24,7 +25,7 @@ import com.parse.ParseQuery;
 import java.util.ArrayList;
 import java.util.List;
 
-public class HomeFragment extends Fragment {
+public class HomeFragment extends Fragment implements HomeFeedAdapter.CustomItemClickListener{
     public static final String FRAGMENT_TAG = "HomeFragment";
 
     private RecyclerView homeFeedRecyclerView;
@@ -54,7 +55,7 @@ public class HomeFragment extends Fragment {
 
         // create data source
         allPosts = new ArrayList<>();
-        homeFeedAdapter = new HomeFeedAdapter(getContext(), allPosts);
+        homeFeedAdapter = new HomeFeedAdapter(getContext(), allPosts, this);
 
         swipeRefreshLayout.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
             @Override
@@ -85,7 +86,7 @@ public class HomeFragment extends Fragment {
                 }
 
                 for (Post post : posts) {
-                    Log.i(FRAGMENT_TAG, "Post: " + post.getCaption() + ", Username: " + post.getUser().getUsername());
+                    Log.i(FRAGMENT_TAG, "Post: " + post.getCaption() + ", Username: " + post.getUser().getUsername() + ", Likes: " + post.getLikeCount());
                 }
 
                 allPosts.addAll(posts);
@@ -94,5 +95,11 @@ public class HomeFragment extends Fragment {
         });
 
         swipeRefreshLayout.setRefreshing(false);
+    }
+
+    @Override
+    public void onItemClick(int position) {
+        Log.i(FRAGMENT_TAG, position + " was clicked");
+        homeFeedAdapter.notifyDataSetChanged();
     }
 }

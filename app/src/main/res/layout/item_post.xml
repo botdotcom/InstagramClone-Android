@@ -59,7 +59,7 @@
             android:id="@+id/like_post_icon_button"
             android:layout_width="25dp"
             android:layout_height="match_parent"
-            android:src="@drawable/ic_instagram_heart_stroke"
+            android:src="@drawable/favorite_bottom_selector"
             app:tint="@color/white" />
 
         <ImageView
