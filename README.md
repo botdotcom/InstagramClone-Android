@@ -27,6 +27,8 @@ The following **optional** features are implemented:
 2.
 - [ ] User can load more posts once he or she reaches the bottom of the feed using infinite scrolling
 - [ ] Show the username and creation time for each post
+      - [x] Show username for each post
+      - [ ] Show creation time for each post
 - [ ] User can tap a post to view post details, including timestamp and caption
 - [ ] User Profiles
       - [ ] Allow the logged in user to add a profile photo

@@ -88,7 +88,7 @@
             android:layout_marginStart="275dp"
             android:layout_toEndOf="@id/send_post_icon_button"
             android:scaleType="centerCrop"
-            android:src="@drawable/ic_instagram_bookmark_stroke"
+            android:src="@drawable/bookmark_selector"
             app:tint="@color/white" />
 
     </RelativeLayout>

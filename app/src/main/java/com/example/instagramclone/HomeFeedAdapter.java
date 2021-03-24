@@ -2,6 +2,7 @@ package com.example.instagramclone;
 
 import android.content.Context;
 import android.graphics.Color;
+import android.text.format.DateUtils;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -19,7 +20,10 @@ import com.parse.ParseFile;
 import com.parse.ParseQuery;
 import com.parse.SaveCallback;
 
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.List;
+import java.util.Locale;
 
 public class HomeFeedAdapter extends RecyclerView.Adapter<HomeFeedAdapter.ViewHolder> {
     private Context context;
@@ -67,12 +71,13 @@ public class HomeFeedAdapter extends RecyclerView.Adapter<HomeFeedAdapter.ViewHo
     }
 
     class ViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
-        private TextView usernameTextView;
-        private ImageView postImageView;
-        private TextView captionTextView;
-        private TextView captionUsernameTextView;
-        private TextView likesCountTextView;
-        private ImageView likePostImageView;
+        private final TextView usernameTextView;
+        private final ImageView postImageView;
+        private final TextView captionTextView;
+        private final TextView captionUsernameTextView;
+        private final TextView likesCountTextView;
+        private final ImageView likePostImageView;
+        private final TextView createdAgoTextView;
 //        private ImageView userImageView;
 
         public ViewHolder(@NonNull View itemView) {
@@ -85,6 +90,7 @@ public class HomeFeedAdapter extends RecyclerView.Adapter<HomeFeedAdapter.ViewHo
             captionUsernameTextView = itemView.findViewById(R.id.caption_username_text_view);
             likesCountTextView = itemView.findViewById(R.id.likes_count_text_view);
             likePostImageView = itemView.findViewById(R.id.like_post_icon_button);
+            createdAgoTextView = itemView.findViewById(R.id.created_ago_text_view);
 //            userImageView = itemView.findViewById(R.id.user_profile_image_view);
 
             likePostImageView.setOnClickListener(this);
@@ -92,6 +98,10 @@ public class HomeFeedAdapter extends RecyclerView.Adapter<HomeFeedAdapter.ViewHo
 
         public void bind(Post post) {
             usernameTextView.setText(post.getUser().getUsername());
+
+            if (post.getCreatedAt() != null) {
+                createdAgoTextView.setText(getRelativeTimeAgo(post.getCreatedAt()));
+            }
 
             if (post.getLikeCount() != 0) {
                 String likes = String.valueOf(post.getLikeCount());
@@ -134,6 +144,22 @@ public class HomeFeedAdapter extends RecyclerView.Adapter<HomeFeedAdapter.ViewHo
 
             itemClickListener.onItemClick(position);
         }
+    }
+
+    private String getRelativeTimeAgo(Date rawDate) {
+        SimpleDateFormat dateTimeFormat = new SimpleDateFormat("dd MM yyyy 'at' HH:mm:ss z", Locale.ENGLISH);
+        dateTimeFormat.setLenient(true);
+
+        String relativeTime = "";
+
+        try {
+            long timeInMillis = dateTimeFormat.parse(String.valueOf(rawDate)).getTime();
+            relativeTime = DateUtils.getRelativeTimeSpanString(timeInMillis, System.currentTimeMillis(), DateUtils.SECOND_IN_MILLIS).toString();
+        } catch (java.text.ParseException e) {
+            e.printStackTrace();
+        }
+
+        return relativeTime;
     }
 
     private void increaseLikes(int position) {
