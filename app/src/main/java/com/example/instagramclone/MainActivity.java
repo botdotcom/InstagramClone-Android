@@ -10,20 +10,15 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.MenuItem;
 import android.view.View;
-import android.widget.Button;
 import android.widget.ImageView;
-import android.widget.Toast;
 
-import com.example.instagramclone.fragments.ComposeFragment;
-import com.example.instagramclone.fragments.HomeFragment;
-import com.example.instagramclone.fragments.ProfileFragment;
+import com.example.instagramclone.fragments.*;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.parse.ParseUser;
 
 public class MainActivity extends AppCompatActivity {
     public static final String ACTIVITY_TAG = "MainActivity";
 
-//    private Button signoutButton;
     private ImageView signoutButton;
     private BottomNavigationView bottomNavigationView;
 

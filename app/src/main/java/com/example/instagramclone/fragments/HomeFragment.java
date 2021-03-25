@@ -60,8 +60,10 @@ public class HomeFragment extends Fragment implements HomeFeedAdapter.CustomItem
         swipeRefreshLayout.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
             @Override
             public void onRefresh() {
-                Log.i(FRAGMENT_TAG, "onSwipeRefresh: success");
+                Log.i(FRAGMENT_TAG, "onSwipeRefresh in HomeFragment: success");
+                homeFeedAdapter.clear();
                 queryPosts();
+                swipeRefreshLayout.setRefreshing(false);
             }
         });
 
@@ -77,6 +79,7 @@ public class HomeFragment extends Fragment implements HomeFeedAdapter.CustomItem
         query.include(Post.KEY_USER);
         query.setLimit(20);
         query.addDescendingOrder(Post.KEY_CREATED_AT);
+
         query.findInBackground(new FindCallback<Post>() {
             @Override
             public void done(List<Post> posts, ParseException e) {
@@ -93,8 +96,6 @@ public class HomeFragment extends Fragment implements HomeFeedAdapter.CustomItem
                 homeFeedAdapter.notifyDataSetChanged();
             }
         });
-
-        swipeRefreshLayout.setRefreshing(false);
     }
 
     @Override

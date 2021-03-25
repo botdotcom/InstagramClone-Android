@@ -110,6 +110,9 @@ public class HomeFeedAdapter extends RecyclerView.Adapter<HomeFeedAdapter.ViewHo
                 else
                     likesCountTextView.setText(likes + " likes");
             }
+            else {
+                likesCountTextView.setText("");
+            }
 
             if (!post.getCaption().isEmpty()) {
                 captionTextView.setText(post.getCaption());

@@ -32,10 +32,13 @@
             tools:text="shamli_singh" />
 
         <ImageView
+            android:id="@+id/post_media_options"
             android:layout_width="wrap_content"
             android:layout_height="30dp"
             android:layout_marginStart="380dp"
             android:src="@drawable/ic_instagram_media_options"
+            android:visibility="visible"
+            android:scaleType="centerCrop"
             app:tint="@color/white" />
 
     </RelativeLayout>

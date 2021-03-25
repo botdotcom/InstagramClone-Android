@@ -27,13 +27,13 @@ The following **optional** features are implemented:
 2.
 - [ ] User can load more posts once he or she reaches the bottom of the feed using infinite scrolling
 - [ ] Show the username and creation time for each post
-      - [x] Show username for each post
-      - [ ] Show creation time for each post
+    - [x] Show username for each post
+    - [ ] Show creation time for each post
 - [ ] User can tap a post to view post details, including timestamp and caption
 - [ ] User Profiles
-      - [ ] Allow the logged in user to add a profile photo
-      - [ ] Display the profile photo with each post
-      - [ ] Tapping on a post's username or profile photo goes to that user's profile page and shows a grid view of the user's posts 
+    - [ ] Allow the logged in user to add a profile photo
+    - [ ] Display the profile photo with each post
+    - [ ] Tapping on a post's username or profile photo goes to that user's profile page and shows a grid view of the user's posts 
 - [ ] User can comment on a post and see all comments for each post in the post details screen
 - [x] User can like a post and see number of likes for each post in the post details screen
 
@@ -41,9 +41,13 @@ The following **optional** features are implemented:
 
 Here's a walkthrough of implemented user stories:
 
+Video Walkthrough 2
+
+<img src='https://i.imgur.com/a3k8NiR.gif' title='Video Walkthrough 2' alt='Video Walkthrough 2' />
+
 Video Walkthrough 1
 
-<img src='https://i.imgur.com/5IN5GgT.gif' title='Video Walkthrough' alt='Video Walkthrough' />
+<img src='https://i.imgur.com/5IN5GgT.gif' title='Video Walkthrough 1' alt='Video Walkthrough 1' />
 
 GIF created with [LiceCap](http://www.cockos.com/licecap/).
 
